@@ -6,17 +6,14 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
-	private String URL  = "jdbc:mysql://localhost:3308/javaWeb/";
-	private String USER = "root";
-	private String PASS = "";
-	
-	public Connection getConnection() {
+	public Connection getConnetion() {
+
 		try {
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-			return DriverManager.getConnection(URL, USER, PASS); 
-		} catch (SQLException sqle) {
-			throw new RuntimeException(sqle.getMessage());
+			return DriverManager.getConnection(
+					"jdbc:mysql://localhost/3WJavaWeb", "root", "root");
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
 		}
 	}
-	
-}
+}	

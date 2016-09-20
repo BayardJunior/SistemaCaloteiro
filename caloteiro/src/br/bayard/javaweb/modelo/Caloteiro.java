@@ -49,4 +49,10 @@ public class Caloteiro {
 	public void setDataDivida(Calendar dataDivida) {
 		this.dataDivida = dataDivida;
 	}
+	
+	@Override
+	public String toString() {
+		return "id: "+this.getId()+"Nome: "+this.getNome()+"Email: "+this.getEmail()+"Devendo: "+this.getDevendo()+"Data divida: "+this.getDataDivida().getTimeInMillis();
+	}
+
 }
